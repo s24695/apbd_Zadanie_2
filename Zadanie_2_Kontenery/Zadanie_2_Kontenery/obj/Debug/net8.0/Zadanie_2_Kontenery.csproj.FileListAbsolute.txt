@@ -1,0 +1,15 @@
+/Users/kacper/Desktop/apbd_Zadanie_2/Zadanie_2_Kontenery/Zadanie_2_Kontenery/bin/Debug/net8.0/Zadanie_2_Kontenery
+/Users/kacper/Desktop/apbd_Zadanie_2/Zadanie_2_Kontenery/Zadanie_2_Kontenery/bin/Debug/net8.0/Zadanie_2_Kontenery.deps.json
+/Users/kacper/Desktop/apbd_Zadanie_2/Zadanie_2_Kontenery/Zadanie_2_Kontenery/bin/Debug/net8.0/Zadanie_2_Kontenery.runtimeconfig.json
+/Users/kacper/Desktop/apbd_Zadanie_2/Zadanie_2_Kontenery/Zadanie_2_Kontenery/bin/Debug/net8.0/Zadanie_2_Kontenery.dll
+/Users/kacper/Desktop/apbd_Zadanie_2/Zadanie_2_Kontenery/Zadanie_2_Kontenery/bin/Debug/net8.0/Zadanie_2_Kontenery.pdb
+/Users/kacper/Desktop/apbd_Zadanie_2/Zadanie_2_Kontenery/Zadanie_2_Kontenery/obj/Debug/net8.0/Zadanie_2_Kontenery.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kacper/Desktop/apbd_Zadanie_2/Zadanie_2_Kontenery/Zadanie_2_Kontenery/obj/Debug/net8.0/Zadanie_2_Kontenery.AssemblyInfoInputs.cache
+/Users/kacper/Desktop/apbd_Zadanie_2/Zadanie_2_Kontenery/Zadanie_2_Kontenery/obj/Debug/net8.0/Zadanie_2_Kontenery.AssemblyInfo.cs
+/Users/kacper/Desktop/apbd_Zadanie_2/Zadanie_2_Kontenery/Zadanie_2_Kontenery/obj/Debug/net8.0/Zadanie_2_Kontenery.csproj.CoreCompileInputs.cache
+/Users/kacper/Desktop/apbd_Zadanie_2/Zadanie_2_Kontenery/Zadanie_2_Kontenery/obj/Debug/net8.0/Zadanie_2_Kontenery.sourcelink.json
+/Users/kacper/Desktop/apbd_Zadanie_2/Zadanie_2_Kontenery/Zadanie_2_Kontenery/obj/Debug/net8.0/Zadanie_2_Kontenery.dll
+/Users/kacper/Desktop/apbd_Zadanie_2/Zadanie_2_Kontenery/Zadanie_2_Kontenery/obj/Debug/net8.0/refint/Zadanie_2_Kontenery.dll
+/Users/kacper/Desktop/apbd_Zadanie_2/Zadanie_2_Kontenery/Zadanie_2_Kontenery/obj/Debug/net8.0/Zadanie_2_Kontenery.pdb
+/Users/kacper/Desktop/apbd_Zadanie_2/Zadanie_2_Kontenery/Zadanie_2_Kontenery/obj/Debug/net8.0/Zadanie_2_Kontenery.genruntimeconfig.cache
+/Users/kacper/Desktop/apbd_Zadanie_2/Zadanie_2_Kontenery/Zadanie_2_Kontenery/obj/Debug/net8.0/ref/Zadanie_2_Kontenery.dll
