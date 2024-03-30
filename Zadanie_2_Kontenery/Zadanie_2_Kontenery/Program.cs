@@ -6,7 +6,7 @@ public class Program
 {
     public static void Main(String[] args)
     {
-        Kontener k1 = new Kontener(10, 10, 100);
+        Kontener k1 = new Kontener(10, 10);
         
         try
         {
@@ -17,7 +17,7 @@ public class Program
             throw new OverfillException("Przeładowano");
         }
         
-        LiquidKontener k2 = new LiquidKontener(5, 5, 1);
+        LiquidKontener k2 = new LiquidKontener(5, 5);
         
         try
         {
@@ -29,7 +29,7 @@ public class Program
         } 
 
         Banana banana = new Banana();
-        RefrigeratedKontener refrigeratedKontener = new RefrigeratedKontener(10, 10, 100, banana);
+        RefrigeratedKontener refrigeratedKontener = new RefrigeratedKontener(10, 10, banana);
         try
         {
             refrigeratedKontener.LoadContainer(banana.Type, 1000);
@@ -38,6 +38,21 @@ public class Program
         {
             throw new OverfillException($"Przeładowano kontener nr:{refrigeratedKontener.Show()}");
         }
+
+        GasKontener gasKontener = new GasKontener(10, 10);
+        gasKontener.LoadContainer(800);
+        gasKontener.CleanContainer();
+        gasKontener.LoadContainer(1000);
+
+
+        Kontenerowiec kontenerowiec = new Kontenerowiec();
+
+        kontenerowiec.addKontener(k1);
+        kontenerowiec.addKontener(k2);
+        kontenerowiec.addKontener(refrigeratedKontener);
+        kontenerowiec.addKontener(gasKontener);
+        
+        
     }
 
     

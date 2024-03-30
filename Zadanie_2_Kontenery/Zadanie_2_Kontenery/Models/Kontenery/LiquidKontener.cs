@@ -16,13 +16,13 @@ public class LiquidKontener : BaseKontener, IHazardNotifier
     
     private static int _indexCount = 1;
 
-    public LiquidKontener(double height, double depth, double selfWeight)
+    public LiquidKontener(double height, double depth)
     {
         Type = 'L';
         Mass = 0;
         Height = height;
         Depth = depth;
-        SelfWeight = selfWeight;
+        SelfWeight = height * depth * 2;
         MaxWeight = 1500;
         Number = GenerateNumber();
     }
@@ -37,7 +37,7 @@ public class LiquidKontener : BaseKontener, IHazardNotifier
     public void CleanContainer()
     {
         Mass = 0;
-        Console.WriteLine("Wyzerowano Kontener.");
+        Console.WriteLine($"Wyzerowano Kontener [{Show()}]");
     }
 
     public void LoadContainer(string hazardType, double load)

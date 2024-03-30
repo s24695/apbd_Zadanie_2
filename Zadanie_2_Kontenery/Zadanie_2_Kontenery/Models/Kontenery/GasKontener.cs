@@ -17,13 +17,13 @@ public class GasKontener : BaseKontener, IHazardNotifier
 
     private int pressure;
 
-    public GasKontener(double height, double depth, double selfWeight)
+    public GasKontener(double height, double depth)
     {
         Type = 'G';
         Mass = 0;
         Height = height;
         Depth = depth;
-        SelfWeight = selfWeight;
+        SelfWeight = height * depth * 2;
         MaxWeight = 2000;
         Number = GenerateNumber();
     }
@@ -39,7 +39,7 @@ public class GasKontener : BaseKontener, IHazardNotifier
     {
         notify();
         Mass *= 0.05;
-        Console.WriteLine("Wyzerowano Kontener.");
+        Console.WriteLine($"Wyzerowano Kontener [{Show()}]");
     }
 
     public new void LoadContainer(double load)

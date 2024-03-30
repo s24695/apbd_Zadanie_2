@@ -19,13 +19,13 @@ public class RefrigeratedKontener : BaseKontener
     private IProdukt _produkt;
     private double kontenerTemp;
 
-    public RefrigeratedKontener(double height, double depth, double selfWeight, IProdukt prod)
+    public RefrigeratedKontener(double height, double depth, IProdukt prod)
     {
         Type = 'C';
         Mass = 0;
         Height = height;
         Depth = depth;
-        SelfWeight = selfWeight;
+        SelfWeight = height * depth * 2;
         MaxWeight = 2000;
         Number = GenerateNumber();
         
@@ -43,7 +43,7 @@ public class RefrigeratedKontener : BaseKontener
     public new void CleanContainer()
     {
         Mass = 0;
-        Console.WriteLine("Wyzerowano Kontener.");
+        Console.WriteLine($"Wyzerowano Kontener [{Show()}]");
     }
 
     public new void LoadContainer(string productType, double load)

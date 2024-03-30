@@ -1,31 +1,29 @@
-﻿using Zadanie_2_Kontenery.Interfaces;
+﻿using System.Collections;
+using Zadanie_2_Kontenery.Exceptions;
+using Zadanie_2_Kontenery.Interfaces;
 
 namespace Zadanie_2_Kontenery.Models;
 
 public class Kontenerowiec
 {
     private int speed; // w węzłach
-    private IKontener[] _konteners;
+    private List<BaseKontener> listaKonteners; 
     private double maxLoadWeight; // w tonach (maks. 50 000)
     private double loadWeight;
+    private int maxKontenerCount;
 
-    public Kontenerowiec(double speed, IKontener[] konteners, double maxLoadWeight)
+    public Kontenerowiec()
     {
-        
-        _konteners = konteners;
-        this.speed = calculateSpeed(konteners);
-        this.maxLoadWeight = maxLoadWeight;
-
+        listaKonteners = new List<BaseKontener>();
+        this.speed = 0;
+        this.maxLoadWeight = 50000;
+        this.maxKontenerCount = 30;
         loadWeight = 0;
     }
 
-    public int calculateSpeed(IKontener[] konteners)
+    public int calculateSpeed()
     {
-        for (int i = 0; i < konteners.Length; i++)
-        {
-            loadWeight += konteners[i].Mass;
-        }
-
+        
         if (loadWeight < 10000)
         {
             speed = 25;
@@ -40,7 +38,35 @@ public class Kontenerowiec
             speed = 10;
         }
         
-        Console.WriteLine($"Prędkość statku = {speed} węzłów");
+        Console.WriteLine($"Prędkość statku = {speed} węzłów przy obciążeniu {loadWeight}");
         return speed;
     }
+
+    public void addKontener(BaseKontener nowyKontener)
+    {
+        if (listaKonteners.Count < maxKontenerCount)
+        {
+            listaKonteners.Add(nowyKontener);
+        }
+        else
+        {
+            throw new OverfillException("Kontenerowiec nie ma już miejsca na więcej kontenerów.");
+        }
+
+        calculateLoadWeight();
+        calculateSpeed();
+        
+    }
+
+    public double calculateLoadWeight()
+    {
+        for (int i = 0; i < listaKonteners.Count; i++)
+        {
+            if (loadWeight < maxLoadWeight)
+            {
+                loadWeight += listaKonteners[i].Mass;
+            }
+        }
+        return loadWeight;
+    } 
 }

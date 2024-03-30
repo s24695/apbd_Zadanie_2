@@ -16,13 +16,13 @@ public class Kontener : BaseKontener
     
     private static int _indexCount = 1;
 
-    public Kontener(double height, double depth, double selfWeight)
+    public Kontener(double height, double depth)
     {
         Type = 'A';
         Mass = 0;
         Height = height;
         Depth = depth;
-        SelfWeight = selfWeight;
+        SelfWeight = height * depth * 2;
         MaxWeight = 2000;
         Number = GenerateNumber();
     }
@@ -37,7 +37,7 @@ public class Kontener : BaseKontener
     public void CleanContainer()
     {
         Mass = 0;
-        Console.WriteLine("Wyzerowano Kontener.");
+        Console.WriteLine($"Wyzerowano Kontener [{Show()}]");
     }
 
     public void LoadContainer(double load)
