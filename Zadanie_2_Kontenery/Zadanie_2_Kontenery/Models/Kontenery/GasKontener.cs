@@ -37,7 +37,8 @@ public class GasKontener : BaseKontener, IHazardNotifier
 
     public new void CleanContainer()
     {
-        Mass = Mass * 0.05;
+        notify();
+        Mass *= 0.05;
         Console.WriteLine("Wyzerowano Kontener.");
     }
 
@@ -49,11 +50,16 @@ public class GasKontener : BaseKontener, IHazardNotifier
             throw new OverfillException();
         }
         
-        Console.WriteLine("Załadowano towar do kontenera.");
+        Console.WriteLine($"Załadowano towar do kontenera [{Show()}] {Mass}/{MaxWeight}kg");
     }
 
     public new string Show()
     {
         return $"{Number}, {Mass}";
     }
+    public void notify()
+    {
+        Console.WriteLine($"Hazard Warning in [{Show()}]");
+    }
+    
 }

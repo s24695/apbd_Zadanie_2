@@ -46,12 +46,13 @@ public class LiquidKontener : BaseKontener, IHazardNotifier
         {
             case "unsafe":
             {
-                MaxWeight = MaxWeight / 2;
-                
+                notify();
+                MaxWeight /= 2;
                 break;
             }
             default:
-                MaxWeight = MaxWeight * 0.9;
+                notify();
+                MaxWeight *= 0.9;
                 break;
         }
         Mass += load;
@@ -60,11 +61,16 @@ public class LiquidKontener : BaseKontener, IHazardNotifier
             throw new OverfillException();
         }
         
-        Console.WriteLine("Załadowano towar do kontenera.");
+        Console.WriteLine($"Załadowano towar do kontenera [{Show()}] {Mass}/{MaxWeight}kg");
     }
 
     public string Show()
     {
         return $"{Number}, {Mass}";
+    }
+
+    public void notify()
+    {
+        Console.WriteLine($"Hazard Warning in [{Show()}]");
     }
 }

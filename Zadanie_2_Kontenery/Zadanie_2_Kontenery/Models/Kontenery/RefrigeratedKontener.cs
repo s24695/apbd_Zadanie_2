@@ -17,8 +17,7 @@ public class RefrigeratedKontener : BaseKontener
     private static int _indexCount = 1;
 
     private IProdukt _produkt;
-    private double temp;
-    private string productType;
+    private double kontenerTemp;
 
     public RefrigeratedKontener(double height, double depth, double selfWeight, IProdukt prod)
     {
@@ -31,8 +30,7 @@ public class RefrigeratedKontener : BaseKontener
         Number = GenerateNumber();
         
         _produkt = prod;
-        temp = prod.Temperature;
-        productType = prod.Type;
+        kontenerTemp = prod.Temperature;
     }
     
     private new string GenerateNumber()
@@ -48,15 +46,24 @@ public class RefrigeratedKontener : BaseKontener
         Console.WriteLine("Wyzerowano Kontener.");
     }
 
-    public new void LoadContainer(double load)
+    public new void LoadContainer(string productType, double load)
     {
-        Mass += load;
-        if (Mass > MaxWeight)
+        if (_produkt.Type.Equals(productType))
         {
-            throw new OverfillException();
+            
+            Mass += load;
+            if (Mass > MaxWeight)
+            {
+                throw new OverfillException($"Przeładowano kontener [{Show()}]");
+            }
+
+            Console.WriteLine($"Załadowano towar do kontenera [{Show()}] {Mass}/{MaxWeight}kg {kontenerTemp}(st.)");
         }
-        
-        Console.WriteLine("Załadowano towar do kontenera.");
+        else
+        {
+            Console.WriteLine($"Błędny typ produktu [{Show()}]");
+        }
+
     }
 
     public new string Show()

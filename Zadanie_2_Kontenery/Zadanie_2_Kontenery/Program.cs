@@ -1,4 +1,5 @@
 ﻿using Zadanie_2_Kontenery.Exceptions;
+using Zadanie_2_Kontenery.Interfaces;
 using Zadanie_2_Kontenery.Models;
 
 public class Program
@@ -16,21 +17,28 @@ public class Program
             throw new OverfillException("Przeładowano");
         }
         
-        Console.WriteLine(k1.Show());
-
-        
-        
         LiquidKontener k2 = new LiquidKontener(5, 5, 1);
         
         try
         {
-            k2.LoadContainer("safe", 1500);
+            k2.LoadContainer("safe", 600);
         }
         catch (OverfillException e)
         {
             throw new OverfillException($"Przeładowano kontener nr:{k2.Show()}");
+        } 
+
+        Banana banana = new Banana();
+        RefrigeratedKontener refrigeratedKontener = new RefrigeratedKontener(10, 10, 100, banana);
+        try
+        {
+            refrigeratedKontener.LoadContainer(banana.Type, 1000);
         }
-        
-        Console.WriteLine(k2.Show());
+        catch (OverfillException e)
+        {
+            throw new OverfillException($"Przeładowano kontener nr:{refrigeratedKontener.Show()}");
+        }
     }
+
+    
 }

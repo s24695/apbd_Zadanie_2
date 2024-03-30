@@ -48,7 +48,7 @@ public class Kontener : BaseKontener
             throw new OverfillException();
         }
         
-        Console.WriteLine("Załadowano towar do kontenera.");
+        Console.WriteLine($"Załadowano towar do kontenera [{Show()}] {Mass}/{MaxWeight}kg");
     }
 
     public string Show()

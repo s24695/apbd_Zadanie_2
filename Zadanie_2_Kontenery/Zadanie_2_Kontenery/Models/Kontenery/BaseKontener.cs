@@ -27,7 +27,7 @@ public abstract class BaseKontener : IKontener
         throw new NotImplementedException();
     }
 
-    public void LoadContainer(string hazardType, double load)
+    public void LoadContainer(string hazardTypeORproductType, double load)
     {
         throw new NotImplementedException();
     }
